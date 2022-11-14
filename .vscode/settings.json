@@ -4,6 +4,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  // 控制资源管理器中的文件嵌套
+  "explorer.fileNesting.patterns": {
+    "package.json": ".browserslist*, .circleci*, .codecov, .czrc, .editorconfig, .firebase*, .flowconfig, .github*, .gitlab*, .gitpod*, .jslint*, .lighthouserc.*, .markdownlint*, .mocha*, .node-version, .nodemon*, .npm*, .nvmrc, .pm2*, .pnp.*, .pnpm*, .releaserc*, .sentry*, .stackblitz*, .styleci*, .stylelint*, .tazerc*, .textlint*, .tool-versions, .travis*, .versionrc*, .vscode*, .watchman*, .xo-config*, .yamllint*, .yarnrc*, Procfile, api-extractor.json, apollo.config.*, appveyor*, ava.config.*, azure-pipelines*, bower.json, build.config.*, crowdin*, cypress.*, dangerfile*, dprint.json, firebase.json, grunt*, gulp*, jasmine.*, jenkins*, karma*, lerna*, lighthouserc.*, lint-staged*, nest-cli.*, netlify*, nodemon*, nx.*, package-lock.json, package.nls*.json, phpcs.xml, playwright.config.*, pm2.*, pnpm*, pullapprove*, puppeteer.config.*, pyrightconfig.json, release-tasks.sh, renovate*, rollup.config.*, stylelint*, tsdoc.*, tslint*, tsup.config.*, turbo*, typedoc*, unlighthouse*, vercel*, vetur.config.*, vitest.config.*, webpack*, workspace.json, xo.config.*, yarn*",
+    "tsconfig.json": "jsconfig.*, .babelrc*, jest.config.*, .eslint*, prettier*, .lintstagedrc, .huskyrc*, .commitlint*, .cz-config.js"
+  },
   // cSpell list
   "cSpell.words": [
     "antd",
