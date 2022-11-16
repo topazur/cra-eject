@@ -13,6 +13,9 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+// const WebpackBar = require('webpackbar')
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const ForkTsCheckerWebpackPlugin
   = process.env.TSC_COMPILE_ON_ERROR === 'true'
@@ -21,19 +24,27 @@ const ForkTsCheckerWebpackPlugin
 
 const paths = require('../paths')
 const judgeJsxRuntime = require('../utils/jsx-runtime')
-const { shouldUseSourceMap, shouldInlineRuntimeChunk, emitErrorsAsWarnings, disableESLintPlugin, useTypeScript } = require('../utils/variable')
+const { shouldUseSourceMap, shouldInlineRuntimeChunk, emitErrorsAsWarnings, disableESLintPlugin, useTypeScript, shouldBuildAnalyzer } = require('../utils/variable')
 
 const { DefinePlugin, IgnorePlugin } = webpack
 // Get the path to the uncompiled service worker (if it exists).
 const swSrc = paths.swSrc
 const hasJsxRuntime = judgeJsxRuntime()
+// webpack-bundle-analyzer options
+const analyzerOptions = {
+  analyzerMode: 'static',
+  openAnalyzer: false,
+  reportFilename: path.join(paths.appPath, 'report.html'),
+  generateStatsFile: true,
+  statsFilename: path.join(paths.appPath, 'stats.json'),
+}
 
 const createWpPluginsConfig = (arg) => {
   const { isEnvDevelopment, isEnvProduction, env } = arg
   const shouldUseReactRefresh = env.raw.FAST_REFRESH
 
   return [
-  // Generates an `index.html` file with the <script> injected.
+    // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin(
       Object.assign(
         {},
@@ -218,6 +229,10 @@ const createWpPluginsConfig = (arg) => {
         },
       },
     }),
+    // 编译进度条(文字版)
+    new SimpleProgressWebpackPlugin({ format: 'compact' }),
+    // 编译产物分析: 使用交互式可缩放树形图可视化 webpack 输出文件的大小
+    shouldBuildAnalyzer && new BundleAnalyzerPlugin(analyzerOptions),
   ].filter(Boolean)
 }
 

@@ -22,3 +22,7 @@ module.exports.disableESLintPlugin = disableESLintPlugin
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig)
 module.exports.useTypeScript = useTypeScript
+
+// 是否打开编译产物分析
+const shouldBuildAnalyzer = process.env.BUILD_ANALYZER === 'true'
+module.exports.shouldBuildAnalyzer = shouldBuildAnalyzer

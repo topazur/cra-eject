@@ -6,6 +6,9 @@ const createWpOptimizationConfig = (arg) => {
   const { isEnvProduction, isEnvDevelopment, env, isEnvProductionProfile } = arg
 
   return {
+    // moduleIds & chunkIds的优化
+    moduleIds: 'deterministic',
+    chunkIds: 'size',
     minimize: isEnvProduction,
     minimizer: [
       // This is only used in production mode

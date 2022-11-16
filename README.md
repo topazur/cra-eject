@@ -9,6 +9,7 @@
   <div><code>pnpm add @antfu/eslint-config-react -D</code></div>
   <div><code>pnpm add @types/testing-library__jest-dom -D</code></div>
   <div><code>pnpm add esno javascript-stringify -D</code></div>
+  <div><code>pnpm add simple-progress-webpack-plugin webpack-bundle-analyzer cross-env -D</code></div>
 </details>
 
 <section style=" background-color: #1c2127; padding: 8px 0; border-radius: 8px">

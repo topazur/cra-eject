@@ -8,6 +8,7 @@ const {
   createWpResolveConfig,
   createWpModuleConfig,
   createWpPluginsConfig,
+  webpackDevServerConfig,
 } = require('./conf')
 
 // This is the production and development configuration.
@@ -49,6 +50,7 @@ module.exports = function (webpackEnv) {
     resolve: createWpResolveConfig({ isEnvProductionProfile }),
     module: createWpModuleConfig({ isEnvProduction, isEnvDevelopment, env }),
     plugins: createWpPluginsConfig({ isEnvProduction, isEnvDevelopment, env }),
+    devServer: webpackDevServerConfig,
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
