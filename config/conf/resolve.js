@@ -46,6 +46,9 @@ const createWpResolveConfig = (arg) => {
         'scheduler/tracing': 'scheduler/tracing-profiling',
       }),
       ...(modules.webpackAliases || {}),
+      '@': paths.appSrc,
+      // NOTICE: 当使用`@types`在导入时报错`无法导入类型声明文件` - 难道不能符号和字母组合?
+      'types': paths.appDeclarationFile,
     },
     plugins: [
     // Prevents users from importing files from outside of src/ (or node_modules/).

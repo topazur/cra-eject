@@ -72,6 +72,8 @@ module.exports = {
   // NOTICE: add webpack config path
   appConfig: resolveApp('config'),
   appWebpackConfig: resolveApp('config/webpack.config.js'),
+  // NOTICE: typescript 类型定义文件 d.ts (TypeScript Declaration File)
+  appDeclarationFile: resolveApp('types'),
 }
 
 module.exports.moduleFileExtensions = moduleFileExtensions
