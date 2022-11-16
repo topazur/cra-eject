@@ -69,6 +69,9 @@ module.exports = {
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
+  // NOTICE: add webpack config path
+  appConfig: resolveApp('config'),
+  appWebpackConfig: resolveApp('config/webpack.config.js'),
 }
 
 module.exports.moduleFileExtensions = moduleFileExtensions

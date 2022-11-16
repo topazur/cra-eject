@@ -14,6 +14,7 @@ require('../config/env')
 
 const fs = require('fs')
 
+const { stringify } = require('javascript-stringify')
 const chalk = require('react-dev-utils/chalk')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
@@ -80,6 +81,7 @@ checkBrowsers(paths.appPath, isInteractive)
     }
 
     const config = configFactory('development')
+    // fs.writeFile('inspect.development.js', stringify(config, null, '\t'), (err) => { err && console.log(err) })
     const protocol = process.env.HTTPS === 'true' ? 'https' : 'http'
     const appName = require(paths.appPackageJson).name
 

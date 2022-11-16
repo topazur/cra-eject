@@ -14,6 +14,7 @@ require('../config/env')
 
 const path = require('path')
 
+const { stringify } = require('javascript-stringify')
 const chalk = require('react-dev-utils/chalk')
 const fs = require('fs-extra')
 const bfj = require('bfj')
@@ -49,6 +50,7 @@ const writeStatsJson = argv.includes('--stats')
 
 // Generate configuration
 const config = configFactory('production')
+// fs.writeFile('inspect.production.js', stringify(config, null, '\t'), (err) => { err && console.log(err) })
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.

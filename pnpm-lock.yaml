@@ -33,6 +33,7 @@ specifiers:
   fs-extra: ^10.0.0
   html-webpack-plugin: ^5.5.0
   identity-obj-proxy: ^3.0.0
+  javascript-stringify: ^2.1.0
   jest: ^27.4.3
   jest-resolve: ^27.4.2
   jest-watch-typeahead: ^1.0.0
@@ -102,6 +103,7 @@ devDependencies:
   fs-extra: 10.1.0
   html-webpack-plugin: 5.5.0_webpack@5.75.0
   identity-obj-proxy: 3.0.0
+  javascript-stringify: 2.1.0
   jest: 27.5.1
   jest-resolve: 27.5.1
   jest-watch-typeahead: 1.1.0_jest@27.5.1
@@ -6464,6 +6466,10 @@ packages:
       chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
+    dev: true
+
+  /javascript-stringify/2.1.0:
+    resolution: {integrity: sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==}
     dev: true
 
   /jest-changed-files/27.5.1:
