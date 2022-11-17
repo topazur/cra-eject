@@ -13,6 +13,9 @@ const sockHost = process.env.WDS_SOCKET_HOST
 const sockPath = process.env.WDS_SOCKET_PATH // default: '/ws'
 const sockPort = process.env.WDS_SOCKET_PORT
 
+/**
+ * @docs https://webpack.docschina.org/configuration/dev-server
+ */
 module.exports = function (proxy, allowedHost) {
   const disableFirewall
     = !proxy || process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true'
@@ -42,6 +45,7 @@ module.exports = function (proxy, allowedHost) {
       'Access-Control-Allow-Headers': '*',
     },
     // Enable gzip compression of generated files.
+    // 启用 [gzip compression](https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/)
     compress: true,
     static: {
       // By default WebpackDevServer serves physical files from current directory
@@ -100,6 +104,7 @@ module.exports = function (proxy, allowedHost) {
       index: paths.publicUrlOrPath,
     },
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
+    // NOTICE: Define proxy config in `package.json -> proxy`.
     proxy,
     onBeforeSetupMiddleware(devServer) {
       // Keep `evalSourceMapMiddleware`

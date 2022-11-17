@@ -4,7 +4,6 @@ const createWpOptimizationConfig = require('./optimization')
 const createWpResolveConfig = require('./resolve')
 const createWpModuleConfig = require('./module')
 const createWpPluginsConfig = require('./plugins')
-const webpackDevServerConfig = require('./dev-server')
 
 module.exports.createWpOutputConfig = createWpOutputConfig
 module.exports.createWpCacheConfig = createWpCacheConfig
@@ -12,4 +11,3 @@ module.exports.createWpOptimizationConfig = createWpOptimizationConfig
 module.exports.createWpResolveConfig = createWpResolveConfig
 module.exports.createWpModuleConfig = createWpModuleConfig
 module.exports.createWpPluginsConfig = createWpPluginsConfig
-module.exports.webpackDevServerConfig = webpackDevServerConfig
